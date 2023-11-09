@@ -1,5 +1,9 @@
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,6 +11,10 @@ public class Main {
         PlantList list = new PlantList();
         try {
             list.loadPlantList(Data.getPATH() + Data.getFilenameCorrect());
+            list.getPlantList().sort(Comparator.comparing(Plant::getName));
+            System.out.println(list);
+            list.getPlantList().sort(Comparator.comparing(Plant::getWatering));
+            System.out.println(list);
         } catch (PlantException e) {
             System.err.println(e.getLocalizedMessage());
         }

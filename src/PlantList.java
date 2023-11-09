@@ -56,5 +56,11 @@ public class PlantList {
         }
         return reply.toString();
     }
+    public List<Plant> getPlantList() {
+        return plantList;
+    }
 
+    public void setPlantList(List<Plant> plantList) {
+        this.plantList = plantList;
+    }
 }
